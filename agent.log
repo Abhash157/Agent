@@ -1,0 +1,39 @@
+2025-05-21 11:21:32,676 - DesktopAgent - INFO - Screen size: 1920x1080
+2025-05-21 11:21:32,693 - DesktopAgent - INFO - Desktop Agent initialized successfully
+2025-05-21 11:21:42,553 - DesktopAgent - WARNING - LLM not available for task planning. Set OPENAI_API_KEY environment variable.
+2025-05-21 11:21:43,568 - TaskInterpreter - INFO - Interpreting step: Analyze screen
+2025-05-21 11:21:43,570 - TaskInterpreter - WARNING - No pattern matched for step: Analyze screen
+2025-05-21 11:21:43,834 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:43,835 - DesktopAgent - INFO - No element found with text 'Analyze'
+2025-05-21 11:21:44,047 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:44,048 - DesktopAgent - INFO - No element found with text 'screen'
+2025-05-21 11:21:44,048 - TaskInterpreter - ERROR - Could not interpret step: Analyze screen
+2025-05-21 11:21:47,791 - TaskInterpreter - INFO - Interpreting step: Perform actions based on visual feedback
+2025-05-21 11:21:47,791 - TaskInterpreter - WARNING - No pattern matched for step: Perform actions based on visual feedback
+2025-05-21 11:21:48,051 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:48,052 - DesktopAgent - INFO - No element found with text 'Perform'
+2025-05-21 11:21:48,270 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:48,271 - DesktopAgent - INFO - No element found with text 'actions'
+2025-05-21 11:21:48,518 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:48,519 - DesktopAgent - INFO - No element found with text 'based'
+2025-05-21 11:21:48,776 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:48,777 - DesktopAgent - INFO - No element found with text 'visual'
+2025-05-21 11:21:48,985 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:48,985 - DesktopAgent - INFO - No element found with text 'feedback'
+2025-05-21 11:21:48,985 - TaskInterpreter - ERROR - Could not interpret step: Perform actions based on visual feedback
+2025-05-21 11:21:58,212 - DesktopAgent - WARNING - LLM not available for task planning. Set OPENAI_API_KEY environment variable.
+2025-05-21 11:21:59,218 - TaskInterpreter - INFO - Interpreting step: Analyze screen
+2025-05-21 11:21:59,219 - TaskInterpreter - WARNING - No pattern matched for step: Analyze screen
+2025-05-21 11:21:59,446 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:59,447 - DesktopAgent - INFO - No element found with text 'Analyze'
+2025-05-21 11:21:59,654 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:21:59,654 - DesktopAgent - INFO - No element found with text 'screen'
+2025-05-21 11:21:59,654 - TaskInterpreter - ERROR - Could not interpret step: Analyze screen
+2025-05-21 11:22:08,313 - DesktopAgent - WARNING - LLM not available for task planning. Set OPENAI_API_KEY environment variable.
+2025-05-21 11:22:09,324 - TaskInterpreter - INFO - Interpreting step: Analyze screen
+2025-05-21 11:22:09,324 - TaskInterpreter - WARNING - No pattern matched for step: Analyze screen
+2025-05-21 11:22:09,546 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:22:09,546 - DesktopAgent - INFO - No element found with text 'Analyze'
+2025-05-21 11:22:09,772 - DesktopAgent - INFO - Analyzed screen and found 0 UI elements
+2025-05-21 11:22:09,772 - DesktopAgent - INFO - No element found with text 'screen'
+2025-05-21 11:22:09,772 - TaskInterpreter - ERROR - Could not interpret step: Analyze screen

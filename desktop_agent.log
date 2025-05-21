@@ -1,0 +1,94 @@
+2025-05-14 11:37:02,506 - INFO - Processing window: Untitled
+2025-05-14 11:37:02,726 - INFO - Found 0 UI elements
+2025-05-14 11:37:02,726 - INFO - Executing step: {'action': 'analyze', 'description': 'Analyze current state'}
+2025-05-14 11:37:54,354 - INFO - Processing window: Untitled
+2025-05-14 11:37:54,571 - INFO - Found 0 UI elements
+2025-05-14 11:37:54,571 - INFO - Executing step: {'action': 'analyze', 'description': 'Analyze current state'}
+2025-05-14 11:38:21,570 - INFO - Processing window: Untitled
+2025-05-14 11:38:21,781 - INFO - Found 0 UI elements
+2025-05-14 11:38:21,782 - INFO - Executing step: {'action': 'analyze', 'description': 'Analyze current state'}
+2025-05-14 11:38:27,245 - INFO - Processing window: Untitled
+2025-05-14 11:38:27,470 - INFO - Found 0 UI elements
+2025-05-14 11:38:27,470 - INFO - Executing step: {'action': 'analyze', 'description': 'Analyze current state'}
+2025-05-14 11:39:45,836 - INFO - Processing window: Untitled
+2025-05-14 11:39:46,032 - INFO - Found 0 UI elements
+2025-05-14 11:39:46,033 - INFO - Executing step: {'action': 'analyze', 'description': 'Analyze current state'}
+2025-05-14 11:39:55,716 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:39:55,719 - ERROR - Error launching application brave: [Errno 2] No such file or directory: 'brave-browser'
+2025-05-14 11:39:55,719 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:40:03,731 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:40:03,733 - ERROR - Error launching application brave: [Errno 2] No such file or directory: 'brave-browser'
+2025-05-14 11:40:03,733 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:40:11,149 - ERROR - Could not create a plan for the task
+2025-05-14 11:40:15,453 - ERROR - Could not create a plan for the task
+2025-05-14 11:40:43,225 - INFO - Executing step: {'action': 'launch_app', 'app': 'firefox'}
+2025-05-14 11:40:43,227 - ERROR - Error launching application firefox: [Errno 2] No such file or directory: 'firefox'
+2025-05-14 11:40:43,227 - ERROR - Step failed: {'action': 'launch_app', 'app': 'firefox'}
+2025-05-14 11:43:37,586 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:43:37,587 - ERROR - Error launching application brave: [Errno 2] No such file or directory: 'brave-browser'
+2025-05-14 11:43:37,588 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:44:52,436 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:44:52,436 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:44:52,436 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:44:52,437 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-14 11:45:06,098 - ERROR - Could not create a plan for the task
+2025-05-14 11:45:14,619 - ERROR - Could not create a plan for the task
+2025-05-14 11:45:17,442 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:17,442 - ERROR - Application brave not found in installed applications
+2025-05-14 11:45:17,442 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:25,228 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:25,228 - ERROR - Application brave not found in installed applications
+2025-05-14 11:45:25,228 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:36,140 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:36,140 - ERROR - Application brave not found in installed applications
+2025-05-14 11:45:36,140 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:50,335 - INFO - Executing step: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:45:50,336 - ERROR - Application brave not found in installed applications
+2025-05-14 11:45:50,336 - ERROR - Step failed: {'action': 'launch_app', 'app': 'brave'}
+2025-05-14 11:46:11,045 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:46:11,046 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:46:11,046 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:46:11,046 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-14 11:46:20,701 - ERROR - Could not create a plan for the task
+2025-05-14 11:47:00,548 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:47:00,548 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:47:00,548 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:47:00,548 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-14 11:47:06,483 - INFO - Executing step: {'action': 'launch_app', 'app': 'calculator'}
+2025-05-14 11:47:12,332 - INFO - Executing step: {'action': 'launch_app', 'app': 'files'}
+2025-05-14 11:47:20,420 - INFO - Executing step: {'action': 'launch_app', 'app': 'terminal'}
+2025-05-14 11:48:20,615 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:48:20,615 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:48:20,615 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:48:20,615 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-14 11:50:10,685 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:50:10,685 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:50:10,685 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:50:10,685 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-14 11:52:26,567 - ERROR - Could not create a plan for the task
+2025-05-14 11:52:30,306 - INFO - Found terminal at /usr/bin/konsole
+2025-05-14 11:52:30,307 - INFO - Found files at /usr/bin/dolphin
+2025-05-14 11:52:30,307 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-14 11:52:30,307 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-21 11:09:25,549 - INFO - Found terminal at /usr/bin/konsole
+2025-05-21 11:09:25,549 - INFO - Found files at /usr/bin/dolphin
+2025-05-21 11:09:25,549 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-21 11:09:25,549 - INFO - Found applications: ['terminal', 'files', 'calculator']
+2025-05-21 11:09:32,531 - ERROR - Could not create a plan for the task
+2025-05-21 11:10:11,155 - INFO - Found terminal at /usr/bin/konsole
+2025-05-21 11:10:11,155 - INFO - Found files at /usr/bin/dolphin
+2025-05-21 11:10:11,155 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-21 11:10:11,156 - INFO - Found visual-studio at /usr/bin/code
+2025-05-21 11:10:11,156 - INFO - Found applications: ['terminal', 'files', 'calculator', 'visual-studio']
+2025-05-21 11:10:18,519 - INFO - Executing step: {'action': 'launch_app', 'app': 'terminal'}
+2025-05-21 11:10:29,506 - INFO - Executing step: {'action': 'launch_app', 'app': 'calculator'}
+2025-05-21 11:10:40,669 - ERROR - Application 'visual' not found. Available applications: ['terminal', 'files', 'calculator', 'visual-studio']
+2025-05-21 11:10:40,669 - ERROR - Could not create a plan for the task
+2025-05-21 11:10:49,711 - INFO - Found terminal at /usr/bin/konsole
+2025-05-21 11:10:49,711 - INFO - Found files at /usr/bin/dolphin
+2025-05-21 11:10:49,711 - INFO - Found calculator at /usr/bin/kcalc
+2025-05-21 11:10:49,711 - INFO - Found visual-studio at /usr/bin/code
+2025-05-21 11:10:49,711 - INFO - Found applications: ['terminal', 'files', 'calculator', 'visual-studio']
+2025-05-21 11:10:54,245 - ERROR - Application 'visual' not found. Available applications: ['terminal', 'files', 'calculator', 'visual-studio']
+2025-05-21 11:10:54,246 - ERROR - Could not create a plan for the task
+2025-05-21 11:11:01,938 - ERROR - Could not create a plan for the task
