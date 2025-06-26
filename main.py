@@ -151,6 +151,9 @@ class DesktopAgentUI:
             self.agent = DesktopAgent()
             self.interpreter = TaskInterpreter(self.agent)
             
+            # Store the interpreter in the agent for direct task matching
+            self.agent.interpreter = self.interpreter
+            
             # Update the status
             self.status_var.set("Agent ready")
             print("Agent initialization complete!")

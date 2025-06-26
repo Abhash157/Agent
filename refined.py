@@ -16,7 +16,7 @@ def find_internal_containers(window_image_cv):
 
     gray = cv2.cvtColor(window_image_cv, cv2.COLOR_BGR2GRAY)
     # You might need to adjust these thresholds based on image contrast
-    edges = cv2.Canny(gray, 50, 150) # Adjust thresholds as needed
+    edges = cv2.Canny(gray, 30, 100) # Lower thresholds for more edge detection
 
     # Use copy() to avoid modifying the original edges image in findContours
     contours, hierarchy = cv2.findContours(edges.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -34,11 +34,11 @@ def find_internal_containers(window_image_cv):
                 x_c, y_c, w_c, h_c = cv2.boundingRect(cnt)
 
                 # Adjust these filtering criteria based on your target "containers"
-                min_area = 5000 # Example threshold - adjust as needed
+                min_area = 500 # Reduced threshold to detect smaller UI elements
                 aspect_ratio = w_c / float(h_c) if h_c > 0 else 0
 
                 # Example filters (tune these based on what you want to detect)
-                if cv2.contourArea(cnt) > min_area and 0.2 < aspect_ratio < 10.0:
+                if cv2.contourArea(cnt) > min_area and 0.1 < aspect_ratio < 15.0:
                     # Check hierarchy[i][3] to see if it has a parent (is nested)? (Optional advanced filter)
                     # if hierarchy[i][3] != -1: # Example: only detect nested contours
 

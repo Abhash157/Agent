@@ -8,6 +8,10 @@ import pyautogui
 import pytesseract
 from PIL import Image
 import logging
+import subprocess
+import shutil
+import tempfile
+import re
 
 # Set up logging
 logging.basicConfig(
@@ -33,9 +37,16 @@ class DesktopAgent:
         self.screen_width, self.screen_height = pyautogui.size()
         logger.info(f"Screen size: {self.screen_width}x{self.screen_height}")
         
-        # Load UI element detection from existing code
-        from refined import find_internal_containers
-        self.find_internal_containers = find_internal_containers
+        # Import UI detection functions
+        try:
+            from ui_detector import detect_ui_elements
+            self.detect_ui_elements = detect_ui_elements
+            logger.info("Using enhanced UI element detection")
+        except ImportError:
+            # Fallback to the original method
+            from refined import find_internal_containers
+            self.find_internal_containers = find_internal_containers
+            logger.info("Using legacy UI element detection")
         
         # Task state
         self.current_task = None
@@ -47,13 +58,36 @@ class DesktopAgent:
     
     def take_screenshot(self, region=None):
         """Take a screenshot of the entire screen or a specific region."""
+        # Try Wayland-native grim first if no region is specified
+        if region is None and shutil.which("grim"):
+            try:
+                with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmpfile:
+                    temp_screenshot_path = tmpfile.name
+                
+                # grim saves to a file. For full screen, just specify the path.
+                # You might need to adjust if you have multiple outputs/monitors.
+                # By default, grim captures all outputs.
+                result = subprocess.run(["grim", temp_screenshot_path], capture_output=True, text=True, check=False)
+                if result.returncode == 0:
+                    logger.info(f"Screenshot taken with grim: {temp_screenshot_path}")
+                    img = Image.open(temp_screenshot_path)
+                    os.remove(temp_screenshot_path) # Clean up temp file
+                    return img
+                else:
+                    logger.error(f"grim failed: {result.stderr}")
+            except Exception as e:
+                logger.error(f"Error using grim: {e}")
+
+        # Fallback to pyautogui or if a region is specified (grim needs slurp for region)
         try:
+            logger.info("Attempting screenshot with pyautogui...")
+            time.sleep(0.5)  # Add a delay before taking the screenshot
             if region:
                 return pyautogui.screenshot(region=region)
             else:
                 return pyautogui.screenshot()
         except Exception as e:
-            logger.error(f"Failed to take screenshot: {e}")
+            logger.error(f"Failed to take screenshot with pyautogui: {e}")
             return None
     
     def move_mouse(self, x, y, duration=0.5):
@@ -107,11 +141,30 @@ class DesktopAgent:
         if screenshot is None:
             return None
         
+        # Save the screenshot for debugging analysis
+        try:
+            screenshot.save("debug_screenshot_for_analysis.png")
+            logger.info("Saved screenshot for analysis to debug_screenshot_for_analysis.png")
+        except Exception as e:
+            logger.error(f"Failed to save debug screenshot: {e}")
+
         # Convert PIL image to OpenCV format
         screenshot_cv = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
         
-        # Find UI containers
-        processed_img, containers = self.find_internal_containers(screenshot_cv)
+        # Use the appropriate UI element detection method
+        if hasattr(self, 'detect_ui_elements'):
+            # Use the new enhanced detection
+            processed_img, containers = self.detect_ui_elements(screenshot_cv)
+        else:
+            # Fallback to the original method
+            processed_img, containers = self.find_internal_containers(screenshot_cv)
+        
+        # Save the processed image with detected UI elements
+        try:
+            cv2.imwrite("debug_processed_screenshot.png", processed_img)
+            logger.info(f"Saved processed screenshot with {len(containers)} detected UI elements")
+        except Exception as e:
+            logger.error(f"Failed to save processed screenshot: {e}")
         
         # Extract text from containers
         elements = []
@@ -159,6 +212,13 @@ class DesktopAgent:
     
     def plan_task(self, task_description):
         """Use LLM to break down the task into actionable steps."""
+        # Check if the task matches any direct patterns in the task interpreter
+        if hasattr(self, 'interpreter') and self.interpreter:
+            for pattern, _ in self.interpreter.action_patterns:
+                if re.search(pattern, task_description, re.IGNORECASE):
+                    logger.info(f"Task '{task_description}' matches a direct pattern, executing directly")
+                    return [task_description]
+        
         if not self.llm_available:
             logger.warning("LLM not available for task planning. Set OPENAI_API_KEY environment variable.")
             return ["Analyze screen", "Perform actions based on visual feedback"]
